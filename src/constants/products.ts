@@ -1,5 +1,14 @@
+import {
+  cloudNerds,
+  dotmod,
+  geekvape,
+  heisenberg,
+  juiceMan,
+  pacha,
+  smok,
+  vaporesso,
+} from "@/assets";
 import { IProduct } from "@/types";
-import { pacha, heisenberg, cloudNerds, juiceMan } from "@/assets";
 
 export const products: IProduct[] = [
   {
@@ -37,5 +46,41 @@ export const products: IProduct[] = [
     },
     title: "Juice Man Unicorn Frappe 100ml Vape Juice",
     _id: "4",
+  },
+  {
+    image: smok,
+    price: "$19.88",
+    properties: {
+      Popular: "true",
+    },
+    title: "SMOK Propod 22W Pod Kit",
+    _id: "5",
+  },
+  {
+    image: vaporesso,
+    price: "$43.88",
+    properties: {
+      Popular: "false",
+    },
+    title: "Vaporesso Luxe XR Max 80W Pod Mod Kit",
+    _id: "6",
+  },
+  {
+    image: geekvape,
+    price: "$28.88",
+    properties: {
+      Popular: "true",
+    },
+    title: "Geekvape Wenax Q 25W Pod Kit",
+    _id: "7",
+  },
+  {
+    image: dotmod,
+    price: "$77.88",
+    properties: {
+      Popular: "false",
+    },
+    title: "dotMod dotAIO V2 Lite 75W AIO Pod Kit",
+    _id: "8",
   },
 ];
