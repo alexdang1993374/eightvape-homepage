@@ -5,7 +5,7 @@ import styled, { css } from "styled-components";
 
 type TButton = "button" | "submit" | "reset" | undefined;
 
-interface IWiiizyButton {
+interface ButtonProps {
   text?: string;
   size?: string;
   hasoutline?: string;
@@ -18,7 +18,7 @@ interface IWiiizyButton {
   isDisabled?: boolean;
 }
 
-const WiiizyButton = ({
+const Button = ({
   text,
   size,
   bgColor,
@@ -29,7 +29,7 @@ const WiiizyButton = ({
   type,
   isDisabled,
   onClick,
-}: IWiiizyButton) => {
+}: ButtonProps) => {
   return (
     <ButtonSt
       size={size}
@@ -51,7 +51,7 @@ const WiiizyButton = ({
   );
 };
 
-export default WiiizyButton;
+export default Button;
 
 const ButtonContainer = styled.div`
   display: flex;
