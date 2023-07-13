@@ -1,10 +1,21 @@
-import Image from "next/image";
+"use client";
+
+import Navbar from "@/components/Navbar";
+import styled from "styled-components";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div>Eight Vape</div>
-    </main>
+    <>
+      <Navbar />
+
+      <main className={styles.main}>
+        <StyledDiv>Eight Vape</StyledDiv>
+      </main>
+    </>
   );
 }
+
+const StyledDiv = styled.div`
+  font-size: 3rem;
+`;

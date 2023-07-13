@@ -6,6 +6,8 @@ html,
 body,
 :root {
   height: 100%;
-  background-color: #000000;
-  color-scheme: dark;
+  background-color: #ffffff;
+  color-scheme: light;
+  font-size: 10px;
+  margin: 0;
 }
