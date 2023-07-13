@@ -3,8 +3,10 @@ import { Balancer } from "react-wrap-balancer";
 import styled from "styled-components";
 
 import { BestSeller } from "@/constants";
-import { backgroundPrimary } from "@/lib/colors";
+import { backgroundPrimary, buttonColor } from "@/lib/colors";
 import { IProduct } from "@/types";
+import Button from "./Button";
+import CartIcon from "./icons/CartIcon";
 
 interface IProductBox {
   product: IProduct;
@@ -37,6 +39,15 @@ const ProductBox = ({ product }: IProductBox) => {
           <PriceRowSt>
             <PriceSt>{product.price}</PriceSt>
           </PriceRowSt>
+
+          <Button
+            bgColor={buttonColor}
+            textColor={buttonColor}
+            hasoutline="true"
+            text="Add to cart"
+            icon={<CartIcon />}
+            isblock="true"
+          />
         </ProductInfoSt>
       </ProductWrapperSt>
     </>
@@ -128,7 +139,7 @@ const ProductInfoSt = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
 `;
 
 const PriceRowSt = styled.div`

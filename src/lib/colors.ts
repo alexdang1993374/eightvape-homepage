@@ -11,3 +11,5 @@ export const boxBackground = "#f2f2f2";
 export const textPrimary = "#333333";
 
 export const textSecondary = "#777777";
+
+export const buttonColor = "#8476fb";
