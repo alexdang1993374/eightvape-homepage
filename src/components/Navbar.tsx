@@ -6,30 +6,21 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
+import { logo } from "@/assets";
 import { movingGradient } from "@/constants";
 import {
   backgroundPrimary,
   boxBackground,
-  failColor,
   sunsetBackground,
   textPrimary,
   textSecondary,
 } from "@/lib/colors";
-import { logo } from "@/assets";
-// import { useGlobalContext } from "./GlobalContext";
-// import LanguageDropdown from "./LanguageDropdown";
+import Image from "next/image";
 import CloseIcon from "./icons/CloseIcon";
 import MenuIcon from "./icons/MenuIcon";
-import Image from "next/image";
-
-interface INavLink {
-  id: string;
-  title: string;
-}
 
 const Navbar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
-  //   const [navLinks, setNavLinks] = useState<INavLink[]>([]);
   const [activeNav, setActiveNav] = useState("");
   const pathname = usePathname();
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -52,8 +43,6 @@ const Navbar = () => {
       title: "Cart",
     },
   ];
-
-  //   const { cartProducts, activeLanguage } = useGlobalContext();
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -88,7 +77,7 @@ const Navbar = () => {
         <StyledLargeScreenUl>
           {navLinks.map((link) => (
             <li key={link.id}>
-              <StyledLink href={`/${link.id}`} title={link.title} passHref>
+              <StyledLink href={`/`} title={link.title} passHref>
                 <StyledMenuAnchor
                   onClick={() => setActiveNav(link.id)}
                   activeNav={activeNav}
@@ -102,12 +91,6 @@ const Navbar = () => {
         </StyledLargeScreenUl>
 
         <MenuIconItemsContainer>
-          {/* {cartProducts.length > 0 && (
-            <CartCounter $isOpen={toggle} onClick={() => setToggle(!toggle)}>
-              {cartProducts.length}
-            </CartCounter>
-          )} */}
-
           <DropdownWrapper ref={wrapperRef}>
             <NavButton onClick={() => setToggle(!toggle)}>
               {toggle ? <CloseIcon /> : <MenuIcon />}
@@ -125,11 +108,7 @@ const Navbar = () => {
                   <StyledUl>
                     {navLinks.map((link) => (
                       <li key={link.id} onClick={() => setToggle(!toggle)}>
-                        <StyledLink
-                          href={`/${link.id}`}
-                          title={link.title}
-                          passHref
-                        >
+                        <StyledLink href={`/`} title={link.title} passHref>
                           <StyledAnchor
                             onClick={() => setActiveNav(link.id)}
                             activeNav={activeNav}
@@ -293,23 +272,4 @@ const NavButton = styled.button`
   @media screen and (min-width: 767px) {
     display: none;
   }
-`;
-
-interface ICartCounter {
-  $isOpen: boolean;
-}
-
-const CartCounter = styled.span<ICartCounter>`
-  position: absolute;
-  background-color: ${failColor};
-  color: ${backgroundPrimary};
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 1.8rem;
-  height: 1.8rem;
-  display: ${({ $isOpen }) => ($isOpen ? "none" : "flex")};
-  justify-content: center;
-  align-items: center;
-  z-index: 4;
 `;
