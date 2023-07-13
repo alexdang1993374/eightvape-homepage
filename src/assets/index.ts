@@ -1,3 +1,4 @@
 import logo from "./logo.webp";
+import promoBanner from "./promoBanner.webp";
 
-export { logo };
+export { logo, promoBanner };

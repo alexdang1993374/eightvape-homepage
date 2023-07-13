@@ -1,7 +1,9 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import styled from "styled-components";
+
+import Featured from "@/components/Featured";
+import Navbar from "@/components/Navbar";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -10,12 +12,8 @@ export default function Home() {
       <Navbar />
 
       <main className={styles.main}>
-        <StyledDiv>Eight Vape</StyledDiv>
+        <Featured />
       </main>
     </>
   );
 }
-
-const StyledDiv = styled.div`
-  font-size: 3rem;
-`;
