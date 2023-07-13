@@ -1,24 +1,16 @@
 import styled from "styled-components";
-import Image from "next/image";
 
 import { FadeInDiv, movingGradient } from "@/constants";
-import { backgroundPrimary, sunsetBackground, textPrimary } from "@/lib/colors";
+import { sunsetBackground } from "@/lib/colors";
 import Center from "./Center";
-import { promoBanner } from "@/assets";
+import ImageCarousel from "./ImageCarousel";
 
 const Featured = () => {
   return (
     <BackgroundSt>
       <FadeInDiv style={{ marginTop: "1rem" }}>
         <Center>
-          <StyledDiv>
-            <Image
-              src={promoBanner}
-              alt="prime day banner"
-              width={1000}
-              height={300}
-            />
-          </StyledDiv>
+          <ImageCarousel />
         </Center>
       </FadeInDiv>
     </BackgroundSt>
@@ -26,18 +18,6 @@ const Featured = () => {
 };
 
 export default Featured;
-
-const StyledDiv = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
 
 const BackgroundSt = styled.div`
   background-image: ${sunsetBackground};
