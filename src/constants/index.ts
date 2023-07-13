@@ -14,9 +14,6 @@ export const movingGradient = keyframes`
 `;
 
 const reveal = keyframes`
- /* from {
-    transform: translateY(2rem);
-  } */
   to {
     opacity: 1;
     transform: none;

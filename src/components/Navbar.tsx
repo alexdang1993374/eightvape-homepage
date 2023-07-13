@@ -20,9 +20,9 @@ import CloseIcon from "./icons/CloseIcon";
 import MenuIcon from "./icons/MenuIcon";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState<boolean>(false);
-  const [activeNav, setActiveNav] = useState("");
   const pathname = usePathname();
+  const [activeNav, setActiveNav] = useState<string>("");
+  const [toggle, setToggle] = useState<boolean>(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
@@ -77,6 +77,7 @@ const Navbar = () => {
         <StyledLargeScreenUl>
           {navLinks.map((link) => (
             <li key={link.id}>
+              {/* Would link to other pages */}
               <StyledLink href={`/`} title={link.title} passHref>
                 <StyledMenuAnchor
                   onClick={() => setActiveNav(link.id)}
@@ -108,6 +109,7 @@ const Navbar = () => {
                   <StyledUl>
                     {navLinks.map((link) => (
                       <li key={link.id} onClick={() => setToggle(!toggle)}>
+                        {/* Would link to other pages */}
                         <StyledLink href={`/`} title={link.title} passHref>
                           <StyledAnchor
                             onClick={() => setActiveNav(link.id)}

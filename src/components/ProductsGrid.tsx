@@ -1,5 +1,6 @@
-import { products } from "@/constants/products";
 import styled from "styled-components";
+
+import { products } from "@/constants/products";
 import ProductBox from "./ProductBox";
 
 const ProductsGrid = () => {

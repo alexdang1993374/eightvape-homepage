@@ -11,17 +11,3 @@ export const boxBackground = "#f2f2f2";
 export const textPrimary = "#333333";
 
 export const textSecondary = "#777777";
-
-export const inputBoxColor = "#e8e8e8";
-
-export const inputSelected = "#2aa5f1";
-
-export const buttonColor = "#8476fb";
-
-export const dividerColor = "#c4c4c4";
-
-export const dropdownHoverColor = "#e0e0e0";
-
-export const successColor = "#9AD17D";
-
-export const failColor = "#F5766F";

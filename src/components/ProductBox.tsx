@@ -1,10 +1,10 @@
+import Image from "next/image";
 import { Balancer } from "react-wrap-balancer";
 import styled from "styled-components";
 
 import { BestSeller } from "@/constants";
 import { backgroundPrimary } from "@/lib/colors";
 import { IProduct } from "@/types";
-import Image from "next/image";
 
 interface IProductBox {
   product: IProduct;
